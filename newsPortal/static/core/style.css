@@ -1,3 +1,4 @@
+
 body{
 	margin: 0;	
 	background: #f5f5f5;
@@ -81,7 +82,7 @@ body{
 		display: block;
 	}
 
-	.top-sm-menu-wrapper{
+	.menu-button{
 		display: none;
 	}
 }
@@ -257,7 +258,8 @@ input[name="subscribe"]{
 
 
 .post-image{
-	width: 300px;
+	height: 300px;
+    width: 100%;
 }
 
 .post-content{
