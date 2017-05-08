@@ -138,7 +138,6 @@ body{
 
 footer{
 	width: 100%;
-    float: right;
 }
 
 .footer-item{
@@ -157,6 +156,7 @@ footer{
 	font-family: "montserrat-bold", sans-serif;
 	color: #8E8E8E;
 	font-size: .85rem;
+	float: left;
 }
 
 .footer-h{
@@ -232,9 +232,10 @@ input[name="subscribe"]{
 	}
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1440px){
 	.footer-wrapper{
-		margin-left: 7.5%;
+	    width: 1440px;
+        margin: auto;
 	}
 }
 
@@ -270,4 +271,14 @@ input[name="subscribe"]{
 
 .post-image-wrapper:hover{
 	color: #000000;
+}
+
+/*	@@POST DETAIL@@  */
+.post-img{
+	width: 100%;
+}
+
+.post-detail{
+	margin: auto;
+    max-width: 768px;
 }
