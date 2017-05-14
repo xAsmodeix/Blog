@@ -50,7 +50,8 @@ function placePostsByRows(posts, per_row){
 		}
 		if (i >= per_row){
 			var prev_post = posts[i - per_row];
-			top = prev_post.offsetHeight + Number(erase_px(prev_post.style.top)) + def_space;
+			top = prev_post.offsetHeight + Number(erase_px(prev_post.style.top)) + def_space + 20;
+			print(top);
 		}
 		left = counter*def_width + def_space;
 		props = {
