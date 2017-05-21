@@ -18,6 +18,7 @@ function placePosts(post_class, cont_class){
 	placePostsByRows(posts, perRow);
 	var container_height = calculateHeight(Array.from(posts), perRow);
 	setContainerHeight(container, container_height);
+	configurePagination();
 
 }
 
@@ -95,6 +96,17 @@ function calculateHeight(posts_sequence, per_row){
 		counter += per_row;
 	}
 	return final_height + 50;
+}
+
+function configurePagination(){
+    var links = document.getElementsByClassName('step-link');
+    var pagination = document.getElementsByClassName('pagination')[0];
+    var width = 10;
+
+    Array.from(links).forEach(function(item, i, arr){
+        width += item.offsetWidth;
+    });
+    pagination.style.width = make_px(width);
 }
 
 

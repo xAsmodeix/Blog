@@ -77,60 +77,39 @@
 <main>
 	<div class="page-content-wrapper">
 		<div class="page-content-wrapper-inner">
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/building.jpg' %}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Wall post</h3>
-						<p>This is wall post text</p>
-					</div>
+			{% for article in articles %}
+			<div class="post">
+				<a class="post-image-wrapper">
+					{% if article.image %}
+						<img class="post-image" src="{{MEDIA_URL}}{{article.image.url}}">
+					{% endif %}
+				</a>
+				<div class="post-content">
+						<h3>{{ article.heading }}</h3>
+						<p>{{ article.text|truncatechars:80 }}...
+							{{article.image}}</p>
 				</div>
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/usaf-rocket.jpeg'%}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Nasa vs SpaceX</h3>
-					</div>
-				</div>
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/building.jpg' %}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Wall post</h3>
-						<p>This is wall post text</p>
-					</div>
-				</div>
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/usaf-rocket.jpeg'%}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Nasa vs SpaceX</h3>
-					</div>
-				</div>
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/building.jpg' %}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Wall post</h3>
-						<p><h1>Hey you</h1></p>
-					</div>
-				</div>
-				<div class="post">
-					<a class="post-image-wrapper">
-						<img src="{% static 'core/usaf-rocket.jpeg'%}" class="post-image">
-					</a>
-					<div class="post-content">
-						<h3>Nasa vs SpaceX</h3>
-					</div>
-				</div>
+			</div>
+			{% endfor %}
 			</div>
 		</div>
 	</div>
+	
+	<div class="pagination">
+    <span>
+        {% if articles.has_previous %}
+            <a href="?page={{ articles.previous_page_number }}" class="step-link">previous</a>
+        {% endif %}
+
+        <span class="current">
+			<a class="step-link">{{ articles.number }}</a>
+        </span>
+
+        {% if articles.has_next %}
+            <a href="?page={{ articles.next_page_number }}" class="step-link">next</a>
+        {% endif %}
+    </span>
+</div>
 </main>
 
 <footer>

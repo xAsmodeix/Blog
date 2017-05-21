@@ -294,3 +294,29 @@ input[name="subscribe"]{
 	margin: auto;
     max-width: 768px;
 }
+
+/* @@PAGINATION@@ */
+.step-link{
+    padding: 10px;
+    background-color: #E8E8E8;
+    color:black;
+    text-decoration: none;
+}
+
+.step-link:visited {
+    color: black;
+}
+
+/* mouse over link */
+.step-link:hover {
+    color: black;
+}
+
+/* selected link */
+.step-link:active {
+    color: black;
+}
+
+.pagination{
+    margin:auto;
+}
