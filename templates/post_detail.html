@@ -76,7 +76,15 @@
 
 <main>
 	<div class="post-detail">
-		<img src="{% static 'core/building.jpg' %}" class="post-img" />	
+		<div class="post-image-wrapper" href="{{article.id}}">
+					{% if article.image %}
+						<img class="post-img" src="{{MEDIA_URL}}{{article.image.url}}">
+					{% endif %}
+				</div>
+				<div class="post-content">
+						<h3>{{ article.heading }}</h3>
+						<p>{{ article.text|truncatechars:80 }}...</p>
+				</div>
 	</div>
 </main>
 

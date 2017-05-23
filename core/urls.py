@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 	url(r'^$', views.index),
-	url(r'^post_detail/', views.post_detail),
+	url(r'^(?P<pk>[0-9]+)/$', views.post_detail),
 ]
 
 if settings.DEBUG:
